@@ -25,7 +25,7 @@ To run the app locally (python 3.6)
 
 ```
 git clone https://github.com/michaelgriffithssurefire/ops-challenge.git
-cd app
+cd ops-challenge
 pip install -r requirements.txt
 python run.py
 ```
