@@ -1,4 +1,4 @@
-#MYOB ops challenge
+# MYOB ops challenge
 
 This repository contains the code and documentation for the myob operations technical test (see https://github.com/MYOB-Technology/ops-technical-test)
 
@@ -24,7 +24,7 @@ what tech was used and why?
 To run the app locally (python 3.6)
 
 ```
-git clone https://github.com/werfy/ops-challenge.git
+git clone https://github.com/michaelgriffithssurefire/ops-challenge.git
 cd app
 pip install -r requirements.txt
 python run.py
