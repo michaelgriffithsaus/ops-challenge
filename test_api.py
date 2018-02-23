@@ -4,10 +4,10 @@ import os
 import sys
 
 # Pathing change so that the tests can correctly discover the app modules
-
 testdir = os.path.dirname(__file__)
 srcdir = '../app/'
 sys.path.insert(0, os.path.abspath(os.path.join(testdir, srcdir)))
+
 from app import app
 
 class TestAPIRoutes(unittest.TestCase):

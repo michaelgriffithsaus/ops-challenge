@@ -1,3 +1,5 @@
+https://travis-ci.org/michaelgriffithssurefire/ops-challenge.svg?branch=master
+
 # MYOB ops challenge
 
 This repository contains the code and documentation for the myob operations technical test (see https://github.com/MYOB-Technology/ops-technical-test)
