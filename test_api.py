@@ -1,20 +1,19 @@
 import unittest
 import json
-import os
-import sys
-
-# Pathing change so that the tests can correctly discover the app modules
-testdir = os.path.dirname(__file__)
-srcdir = '../app/'
-sys.path.insert(0, os.path.abspath(os.path.join(testdir, srcdir)))
-
-from app import app
+from app import APP
 
 class TestAPIRoutes(unittest.TestCase):
 
+    """
+        Contains all Test Cases for testing the app's API endpoints.
+        When invoked the SetUp will run first and initialise the app.
+        The app will stay initialised through the test session.
+        Given the low complexity of the app no tear down method has been implemented.
+    """
+
     def setUp(self):
-        self.app = app.test_client()
-    
+        self.app = APP.test_client()
+
     #Sunny Day scenario Tests for the hello world class
     # Route = /
     def test_that_hello_world_returns_200(self):
@@ -22,10 +21,10 @@ class TestAPIRoutes(unittest.TestCase):
         self.assertEqual(response.status_code, 200)
 
     def test_that_hello_world_returns_correct_content(self):
-        correctResponse = {'hello': 'world'}
+        correct_response = {'hello': 'world'}
         response = self.app.get('/')
-        responseContent = json.loads(response.get_data())
-        self.assertEqual(responseContent, correctResponse)
+        response_content = json.loads(response.get_data())
+        self.assertEqual(response_content, correct_response)
 
     #Sunny Day scenario Test for the health class
     # Route = /health
@@ -35,12 +34,12 @@ class TestAPIRoutes(unittest.TestCase):
         self.assertEqual(response.status_code, 200)
 
     def test_that_health_returns_UP_when_healthy(self):
-        correctResponse = {'Status' : 'UP'}
-        
-        response = self.app.get('/health')
-        responseContent = json.loads(response.get_data())
+        correct_response = {'Status' : 'UP'}
 
-        self.assertEqual(responseContent, correctResponse)
+        response = self.app.get('/health')
+        response_content = json.loads(response.get_data())
+
+        self.assertEqual(response_content, correct_response)
     
     #Sunny Day scenario Test for the metadata class
     # Route = /metadata
@@ -51,7 +50,7 @@ class TestAPIRoutes(unittest.TestCase):
 
     
     def test_that_metadata_returns_metadata(self):
-        correctResponse = {
+        correct_response = {
             "myapplication": [
                 {
                     "version": "1.0",
@@ -62,11 +61,10 @@ class TestAPIRoutes(unittest.TestCase):
             }
         
         response = self.app.get('/metadata')
-        responseContent = json.loads(response.get_data())
+        response_content = json.loads(response.get_data())
 
-        self.assertEqual(responseContent, correctResponse)
+        self.assertEqual(response_content, correct_response)
 
-        
 
 if __name__ == '__main__':
     unittest.main()

@@ -7,19 +7,17 @@ from routes import helloworld
 from routes import health
 from routes import metadata
 
-app = Flask('app')
-api = Api(app, catch_all_404s=True)
+APP = Flask('app')
+API = Api(APP, catch_all_404s=True)
 
 #config to be moved to seperate dir
-app.config['SECRET_KEY'] = 'random'
-app.debug = True
+APP.config['SECRET_KEY'] = 'random'
+APP.debug = True
 
 #Add API Routes
-api.add_resource(helloworld.HelloWorld, '/')
-api.add_resource(health.Health, '/health')
-api.add_resource(metadata.Metadata, '/metadata')
+API.add_resource(helloworld.HelloWorld, '/')
+API.add_resource(health.Health, '/health')
+API.add_resource(metadata.Metadata, '/metadata')
 
 if __name__ == '__main__':
-    app.run(debug=True)
-
-
+    APP.run(debug=True)
