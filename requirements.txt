@@ -3,3 +3,4 @@ flask_restful
 json
 unittest
 requests
+coverage

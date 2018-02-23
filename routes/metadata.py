@@ -4,7 +4,7 @@ import json
 class Metadata(Resource):
 
     def get(self):
-        file = open('build.properties', 'r')
+        file = open('build.json', 'r')
         properties = file.read()
         file.close()
         

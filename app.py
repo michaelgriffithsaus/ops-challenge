@@ -3,9 +3,9 @@ from flask import Flask
 from flask_restful import Resource, Api
 
 #Import API Routes
-from resources import helloworld
-from resources import health
-from resources import metadata
+from routes import helloworld
+from routes import health
+from routes import metadata
 
 app = Flask('app')
 api = Api(app, catch_all_404s=True)
