@@ -19,7 +19,7 @@ services:
 after_success:
 - "./build/generate_build_info.sh"
 - docker --version
-- docker login -u $DOCKER_USER -p $DOCKER_PASS
+- docker login -u werfcoder -p $DOCKER_PASS
 - export REPO=werfcoder/ops-challenge
 - export TAG=`if [ "$TRAVIS_BRANCH" == "master" ]; then echo "latest"; else echo $TRAVIS_BRANCH
   ; fi`
@@ -31,6 +31,4 @@ after_success:
 
 env:
   global:
-  - secure: A80GplE5o4ZlxkFrG+vYJNMbpTwJ5gcygvbeF5AWFh4cyQS1EWj8vTAaxRK5S0VJP64h5yHz8dsPiTtaDrgD2vRAzxaSmV9CpxqmTzPAFp4OW8FC4HgP6cI54fxcyKu7VkdkE31AjjB1qQtH6q4iMZj6mQsKVIfl3B7eBhsdWo7uDHPBWTv73JPGN/zZd0eMY70C9N3a/hXwEjW3jr2kGDMiT6GpsvXmjHwAXRebSKzPi3ejvTCgvj6IgdrUVkE50R4EXAJ0w6PB0mrqj6tCj1Yj1KsS18lvNMbyfv1aanHbL+xrM3Q5dd6HXfX/ycYOREB4f7FoSRlJxkoo6IKoLBC6a2NJVAegkhfOb0NlXceuut9dGuYoU6rcvX+YhzsOrQLSkAFpnNRchAVVGPmC8tD3ZP1/6LusNEzq2qkJQ9f97yo1YzYkbz4gHvWFSHpHV27gVFv5N1SG7a1BtDWWsLzRbk8nwG80lXEm5NlCHTK91cxT9lBe9QPD6Q/RpD4nIWOHgGLo1aHOHg1XZW0HWM2YNHctJnEr2e6UdWda1HYBdpOSaYr8lWpLs5jYt3RulkYKvs/ZRk8YYaEhheCq7UwtfLOv/YrVJX3u5dsMoCcsZOD96d9SDNxp/ZT/u0rrQLIurRmikx6BIQcMDc0rTAfPOi8wMKfSLibjgI12OLk=
   - secure: tNY2Z7YX81Qh1KFzZY6xOW0cgCpfLm0/iCtzJbHD6BXL8GruPqO4Ivz+5WTOzF+pyufnf5xGQJ0Nyoldr4sYolue6kYbz2qi51a+5Vo1aqgVwRbu+K3OBeRVtvPH9JR4i2t4EtvrMlB8gihuiApMJEHXiXIIj1gf9sUj4zuVbPkfYeRKS/pbTQEmFNXHX4Zrhbtzqi95SpvX98wlJmrNVGNj1L/6U9WRwcVvEu/tMdFxoXa8Ep1KK633baEu05gp91ba98OhG10GHi77asNtKiPn1S+UR7MajSd+FHn/vg0FYq3cDZqC8CogFhDNS//UkOlghmP1hx0PpbnSKnaLU5njBmTq9Hj93Y8EZwFew1fRIQIVz9QdhFRCMqzxbVB1mquCDs7RV4anKbpXnKNa0nom5cJ1kQUmJ4FV3/6L9Nob2gPgzxUi7QAJQV1QAa16rR2SlakRahgBWHuGmtwNk1umx0U8KCqvxH0WddTlQ9WgYY7H+vofv0jMmfQzvOjyuuJzB03HdmWA78ZR7aX5G3Y0mN4z5EDXkN1ajuQ9rRWAwO8WcDv3e33mkIKmt1aWA8iwv+8X6SjCF35d7tSXED3lBjc1CD33ELyZxMeQtxqq/D79UWk238G9HH8400dzuM0ssbCSFXK/2StCi+916Vg8fiL95CTb4ysxWXYjjOc=
-  - DOCKER_USER=werfcoder
