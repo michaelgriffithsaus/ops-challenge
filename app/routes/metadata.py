@@ -1,4 +1,5 @@
 import json
+import pkg_resources
 from flask_restful import Resource
 
 
@@ -11,7 +12,10 @@ class Metadata(Resource):
     """
 
     def get(self):
-        file = open('build.json', 'r')
+
+        build_file_path = pkg_resources.resource_filename('app', 'build.json')
+
+        file = open(build_file_path, 'r')
         properties = file.read()
         file.close()
 
