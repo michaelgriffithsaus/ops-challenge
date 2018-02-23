@@ -20,4 +20,4 @@ API.add_resource(health.Health, '/health')
 API.add_resource(metadata.Metadata, '/metadata')
 
 if __name__ == '__main__':
-    APP.run(debug=True)
+    APP.run()
