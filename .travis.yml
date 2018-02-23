@@ -1,14 +1,14 @@
-  # Python Build and Test Specifications
+# Python Build and Test Specifications
 
-  language: python
+language: python
   
-  python:
-    - "3.6"
+python:
+  - "3.6"
   
-  script:
+script:
     - python app/test_api.py
   
-  install:
+install:
    - pip install -r app/requirements.txt
 
 
@@ -16,24 +16,8 @@
 sudo: required
 
 services:
-  - docker
+    - docker
 
 after_success:
-
-
-##
-## Todo - create the build.json
-
- - PROPERTIES_FILE='build.txt'
- - echo "build.travis_build_number=$TRAVIS_BUILD_NUMBER" >> $PROPERTIES_FILE
- - echo "build.description=Pre-interview technical test" >> $PROPERTIES_FILE
- - echo "build.git_sha=$TRAVIS_COMMIT" >> $PROPERTIES_FILE
- - echo "build.triggered_by=$TRAVIS_EVENT_TYPE" >> $PROPERTIES_FILE
- - echo "build.date=`date +%Y%m%d_%H%M`" >> $PROPERTIES_FILE
- - cp $PROPERTIES_FILE app/build.txt
- - cat app/$PROPERTIES_FILE
-
-
-##
-
-  - docker --version  # document the version travis is using
+    - ./build/generate_build_info.sh
+    - docker --version  # document the version travis is using
