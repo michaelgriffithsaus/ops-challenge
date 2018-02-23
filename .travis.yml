@@ -30,7 +30,8 @@ after_success:
  - echo "build.git_sha=$TRAVIS_COMMIT" >> $PROPERTIES_FILE
  - echo "build.triggered_by=$TRAVIS_EVENT_TYPE" >> $PROPERTIES_FILE
  - echo "build.date=`date +%Y%m%d_%H%M`" >> $PROPERTIES_FILE
- - cp PROPERTIES_FILE app/build.txt
+ - cp $PROPERTIES_FILE app/build.txt
+ - cat $PROPERTIES_FILE
 
 
 ##
