@@ -25,7 +25,7 @@ class Metadata(Resource):
                     properties = dict(line.rstrip().split("=") for line in file)
                     return properties
                 except Exception as e:
-                    return {"Error encountered reading metadata file: " + e.message} , 500
+                    return {"Error encountered reading metadata file"} , 500
 
         else:
             return {"Unable to open metadata file. File not found"} , 500
