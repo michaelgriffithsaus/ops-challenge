@@ -11,7 +11,7 @@ set -o errexit
 
 PROPERTIES_FILE='app/build.txt'
 
-echo "\travis_build_number=$TRAVIS_BUILD_NUMBER" >> $PROPERTIES_FILE
+echo "travis_build_number=$TRAVIS_BUILD_NUMBER" >> $PROPERTIES_FILE
 echo "git_sha=$TRAVIS_COMMIT" >> $PROPERTIES_FILE
 echo "triggered_by=$TRAVIS_EVENT_TYPE" >> $PROPERTIES_FILE
 echo "build_date=`date +%Y%m%d_%H%M`" >> $PROPERTIES_FILE
