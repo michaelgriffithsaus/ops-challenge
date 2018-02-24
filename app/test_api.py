@@ -34,7 +34,7 @@ class TestAPIRoutes(unittest.TestCase):
         self.assertEqual(response.status_code, 200)
 
     def test_that_health_returns_UP_when_healthy(self):
-        correct_response = {'Status' : 'UP'}
+        correct_response = {'status' : 'UP'}
 
         response = self.app.get('/health')
         response_content = json.loads(response.get_data())
@@ -51,13 +51,7 @@ class TestAPIRoutes(unittest.TestCase):
     
     def test_that_metadata_returns_metadata(self):
         correct_response = {
-            "myapplication": [
-                {
-                    "version": "1.0",
-                    "description" : "pre-interview technical test",
-                    "lastcommitsha": "abc57858585"
-                }
-            ]
+            "app_description": "Pre-interview technical test"
             }
         
         response = self.app.get('/metadata')
