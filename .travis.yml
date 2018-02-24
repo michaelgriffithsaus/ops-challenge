@@ -1,19 +1,11 @@
 language: python
-
 python:
 - '3.6'
-
 script:
 - python app/test_api.py
-
-
 install:
 - pip install -r app/requirements.txt
-
-
 sudo: required
-
-
 services:
 - docker
 after_success:
@@ -27,8 +19,7 @@ after_success:
 - docker tag $REPO $REPO:$TAG
 - docker tag $REPO $REPO:travis-$TRAVIS_BUILD_NUMBER
 - docker push $REPO:$TAG
-
-
 env:
   global:
   - secure: tNY2Z7YX81Qh1KFzZY6xOW0cgCpfLm0/iCtzJbHD6BXL8GruPqO4Ivz+5WTOzF+pyufnf5xGQJ0Nyoldr4sYolue6kYbz2qi51a+5Vo1aqgVwRbu+K3OBeRVtvPH9JR4i2t4EtvrMlB8gihuiApMJEHXiXIIj1gf9sUj4zuVbPkfYeRKS/pbTQEmFNXHX4Zrhbtzqi95SpvX98wlJmrNVGNj1L/6U9WRwcVvEu/tMdFxoXa8Ep1KK633baEu05gp91ba98OhG10GHi77asNtKiPn1S+UR7MajSd+FHn/vg0FYq3cDZqC8CogFhDNS//UkOlghmP1hx0PpbnSKnaLU5njBmTq9Hj93Y8EZwFew1fRIQIVz9QdhFRCMqzxbVB1mquCDs7RV4anKbpXnKNa0nom5cJ1kQUmJ4FV3/6L9Nob2gPgzxUi7QAJQV1QAa16rR2SlakRahgBWHuGmtwNk1umx0U8KCqvxH0WddTlQ9WgYY7H+vofv0jMmfQzvOjyuuJzB03HdmWA78ZR7aX5G3Y0mN4z5EDXkN1ajuQ9rRWAwO8WcDv3e33mkIKmt1aWA8iwv+8X6SjCF35d7tSXED3lBjc1CD33ELyZxMeQtxqq/D79UWk238G9HH8400dzuM0ssbCSFXK/2StCi+916Vg8fiL95CTb4ysxWXYjjOc=
+  - secure: eU5SWoc3hMDux9j7BpnoufY2/4/f4AFWgStDFgov75k90IV3g/9nqk1HygiAZpDcPKrpG2hIMHsVc1bkYCaecUzurcsHkHOMvIOgStgt6CB8mauactW04F516HtSdKm5etXscM/lkjmPXaDmVy3iyRLNOkV/OWOGD1wGuX/WPunnhX7tS2WWBkEC4lJ3n0wqCaF2Fig8oROULRJBoFqGXpsCO5qJeBI1DzgFfEUNLbOObg5H9Jy/bgIuGW+2zH08VNmQ+2oMKF36RvdJZHAiUI3DruDOy8e15mRisQV+BTDsEL7YH46Bq8ahZaHp2pkCRLLZNP2zbLWZjV3N0vzOuJhtCWCdK+guS7Bqj5C6HSiXDgwtSXUtC/Pfl8yOj59Yx9l8Gm5IGUmqSnXuGYtdIM+UVLH38Br3FxYaUZ1cvSz/FdhhI8DE+s/0bm0DPshSL2mAoTOI5EegmAT/cA8v+ERWvMg5LVBr0145A8bgztxxMtcDUfT5OkiJSrbwRz16FVH9MPqRIN23bhzMf1pYNgyDi1pPoO6sqOTc98vhLCwzCX2K1ShPsGHwnm0lghKd6cvsl/ljYT5ZiyQxz5Rh7OlICjEjmnExkKGk6Q3E2Yvf1NZdq/TBQ5SKp8Mcv1na+U0ymMPlurBhkmGdVAe+TDgvcVQpaoyVE/c2P718IUw=
