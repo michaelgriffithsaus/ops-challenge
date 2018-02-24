@@ -2,15 +2,21 @@
 
 # MYOB ops challenge
 
-This repository contains the code and documentation for the myob operations technical test (see https://github.com/MYOB-Technology/ops-technical-test)
+This repository contains the code and documentation for my submission of the MYOB operations technical test (see https://github.com/MYOB-Technology/ops-technical-test)
+
+This test was very fun to do and the openended-ness of the specification was challenging as i needed to select technologies that could work everywhere as well as being careful that i didn't go too far out of scope.
 
 # Assumptions
 
-List any assumptions made about the challenge
+
 
 # The app
 
-explain what the applicaiton does and its inner workings
+The application is a simple REST api service that responds on the following endpoints.
+
+/
+/health (applicaiton health check)
+/metadata (build properties and application info)
 
 # Design Choices 
 
@@ -23,15 +29,29 @@ what tech was used and why?
 
 # Development
 
-To run the app locally (python 3.6)
+
+
+# To run the app locally 
+
+## Docker Run (pulls the container from docker hub 323MB)
+
+
+## (Docker Compose)
+
+```
+git clone https://github.com/michaelgriffithssurefire/ops-challenge.git
+cd ops-challenge
+docker-compose up -d
+```
+
+## (python 3.6)
 
 ```
 git clone https://github.com/michaelgriffithssurefire/ops-challenge.git
 cd ops-challenge
 pip install -r requirements.txt
-python run.py
+python app/run.py
 ```
-
 
 To run the tests
 
