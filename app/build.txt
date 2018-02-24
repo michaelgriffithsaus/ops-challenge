@@ -1,1 +1,1 @@
-build.description=Pre-interview technical test
+app_description=Pre-interview technical test

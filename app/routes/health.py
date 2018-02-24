@@ -17,7 +17,7 @@ class Health(Resource):
             response = 500
             status_text = "DOWN"
 
-        return {'Status': status_text}, response
+        return {'status': status_text}, response
 
     def check_health(self, healthy=True):
 

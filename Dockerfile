@@ -5,7 +5,7 @@ MAINTAINER "Michael Griffiths" <michaelgriffithsaus@gmail.com>
 ENV LAST_UPDATED 2018-02-23
 ENV INSTALL_DIR = /usr/src/app
 
-# Update packages and clean any un-needed packages, files or dependancies
+# Update packages and clean any un-needed/leftover packages, files or dependancies
 RUN apt-get update -y && \
     apt-get upgrade -y && \
     apt-get clean -y && \

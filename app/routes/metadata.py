@@ -1,5 +1,6 @@
 import json
 import pkg_resources
+import os
 from flask_restful import Resource
 
 
@@ -13,10 +14,17 @@ class Metadata(Resource):
 
     def get(self):
 
-        build_file_path = pkg_resources.resource_filename('app', 'build.json')
+        build_file_path = pkg_resources.resource_filename('app', 'build.txt')
 
-        file = open(build_file_path, 'r')
-        properties = file.read()
-        file.close()
+        if os.path.isfile(build_file_path):
+            try:
+                file = open(build_file_path, 'r')
+            except (OSError, IOError) as e:
+                return {"IOError encountered when trying to open metadata file."}, 500
 
-        return json.loads(properties)
+            try:
+                properties = dict(line.rstrip().split("=") for line in file)
+                return properties
+            except Exception as e:
+                return {"Error encountered reading metadata file"} , 500
+
