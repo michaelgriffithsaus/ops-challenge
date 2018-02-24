@@ -4,48 +4,56 @@
 
 This repository contains the code and documentation for my submission of the MYOB operations technical test (see https://github.com/MYOB-Technology/ops-technical-test)
 
-This test was very fun to do and the openended-ness of the specification was challenging as i needed to select technologies that could work everywhere as well as being careful that i didn't go too far out of scope.
-
-# Assumptions
-
-
-
-# The app
+This test was very fun to do and the open ended style of the specification was challenging as i needed to select technologies that could work everywhere as well as being careful that i didn't go too far out of scope.
 
 The application is a simple REST api service that responds on the following endpoints.
 
-/
-/health (applicaiton health check)
-/metadata (build properties and application info)
+**/**
+```
+curl localhost:8080
+{
+    "hello": "world"
+}
+```
 
-# Design Choices 
+**/health** (application health check)
+```
+curl localhost:8080/health
+{
+    "status": "UP"
+}
+```
 
-how was it built and why?
+**/metadata** (build properties and application info)
+```
+curl localhost:8080/metadata
+{
+    "app_description": "Pre-interview technical test",
+    "travis_build_number": "22",
+    "git_sha": "0358d6bd1f1c9f1ae2a276101712beda90f1836f",
+    "triggered_by": "push",
+    "build_date": "20180224_1259"
+}
+```
+
+# Assumptions
+
+An assumption was made that the submitted app does not need to handle a large scale production workload but should be in a state that allows it to be consistently reviewed and tested.
+The flask web server utilised in ops-challenge is not recommended for production use but can still be used for a production deployment when paired with Nginx or Apache using a WSGI configuration or behind an AWS ELB.
+
 
 # Technology Used
-
-what tech was used and why?
-
-
-# Development
-
 
 
 # To run the app locally 
 
-## Docker Run (pulls the container from docker hub 323MB)
-
-
-## (Docker Compose)
+## Docker - (pulls the container from docker hub 323MB) and runs it.
 
 ```
-git clone https://github.com/michaelgriffithssurefire/ops-challenge.git
-cd ops-challenge
-docker-compose up -d
+docker run -d -p 8080:8080 werfcoder/ops-challenge:latest  
 ```
 
-## (python 3.6)
-
+## Python
 ```
 git clone https://github.com/michaelgriffithssurefire/ops-challenge.git
 cd ops-challenge
