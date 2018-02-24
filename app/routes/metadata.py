@@ -20,11 +20,11 @@ class Metadata(Resource):
 
         if os.path.isfile(build_file_path):
             with open(build_file_path, 'r') as file:
-            
+
                 try:
                     properties = dict(line.rstrip().split("=") for line in file)
                     return properties
-                except Exception as e:
+                except Exception:
                     return {"Error encountered reading metadata file"} , 500
 
         else:
