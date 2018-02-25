@@ -35,7 +35,9 @@ curl localhost:8080/metadata
     "build_date": "20180224_1259"
 }
 ```
-This repository integrates with TravisCI and the code is built, tested, containerised and pushed to a public docker repository with each push to the master branch.
+This repository integrates with TravisCI and the code is built, tested, contaicdnerised and pushed to a public docker repository with each push to the master branch.
+
+Build properties are generated during the CI process and mapped into the Docker container.
 
 # Assumptions
 
