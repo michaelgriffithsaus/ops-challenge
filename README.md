@@ -4,7 +4,7 @@
 
 This repository contains the code and documentation for my submission of the MYOB operations technical test (see https://github.com/MYOB-Technology/ops-technical-test)
 
-This test was very fun to do and the open ended style of the specification was challenging as i needed to select technologies that could work everywhere as well as being careful that i didn't go too far out of scope.
+This test was very fun to do and the open ended style of the specification was challenging as I needed to select technologies that could work everywhere as well as being careful that I didn't go too far out of scope in the limited timeframe.
 
 The application is a simple REST api service that responds on the following endpoints.
 
@@ -35,7 +35,7 @@ curl localhost:8080/metadata
     "build_date": "20180224_1259"
 }
 ```
-This repository integrates with TravisCI and the code is built, tested, contianerised and pushed to a public docker repository with each push to the master branch.
+This repository integrates with TravisCI and the code is built, tested, containerised and pushed to a public docker repository with each push to the master branch.
 
 # Assumptions
 
@@ -62,7 +62,6 @@ docker run -d -p 8080:8080 werfcoder/ops-challenge:latest
 ```
 
 ## Python (3.6)
-*The script in the projects run/ directory named run_with_python.sh will perform the same tasks below.*
 
 If you have other python related projects on your system making a virualenv is recommended.
 ```
@@ -87,9 +86,4 @@ To run the tests
 ```
 python test_api.py
 ```
-
-# Deployment
-
-how can this app be deployed?
-
 
