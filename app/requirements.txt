@@ -1,3 +1,2 @@
-flask
-flask_restful
-requests
+Flask==0.12.2
+Flask-RESTful==0.3.6
