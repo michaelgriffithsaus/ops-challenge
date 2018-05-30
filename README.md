@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/michaelgriffithssurefire/ops-challenge.svg?branch=master)](https://travis-ci.org/michaelgriffithssurefire/ops-challenge)
+[![Build Status](https://travis-ci.org/michaelgriffithsaus/ops-challenge.svg?branch=master)](https://travis-ci.org/michaelgriffithsaus/ops-challenge)
 
 # MYOB ops challenge
 
